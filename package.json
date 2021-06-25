@@ -9,7 +9,9 @@
         "build": "tsc",
         "start": "node ./bin/index.js",
         "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/index.ts",
-        "lint": "eslint 'src/**/*.{js,ts}' --quiet --fix",
+        "eslint:lint": "eslint 'src/**/*.{js,ts}' --quiet --fix",
+        "prettier:fix": "prettier --write .",
+        "prettier:check": "prettier --check .",
         "prepare": "husky install",
         "check-ts": "yarn tsc",
         "pre-commit-lint": "yarn check-ts && yarn lint-staged"

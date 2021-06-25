@@ -1,8 +1,8 @@
 {
     "src/**/*.+(js|json|ts)": [
-      "eslint 'src/**/*.{js,ts}' --quiet --fix"
+      "yarn eslint:lint"
     ],
     "src/**/*.{js,ts,json}": [
-      "prettier --write ."
+      "yarn prettier:check"
     ]
 }
