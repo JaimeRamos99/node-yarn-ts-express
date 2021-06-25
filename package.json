@@ -32,15 +32,5 @@
   },
   "dependencies": {
     "express": "^4.17.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix"
-    ]
   }
 }
