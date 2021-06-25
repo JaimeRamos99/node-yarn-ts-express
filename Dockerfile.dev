@@ -1,5 +1,5 @@
 #THIS DOCKERFILE IS FOR DEVELOPMENT STAGE
-FROM node:12-alpine
+FROM node:14-alpine
 
 RUN apk update
 
@@ -15,4 +15,4 @@ RUN yarn install
 
 EXPOSE 3000
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "start:dev"]
