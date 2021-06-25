@@ -11,7 +11,8 @@
     "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/index.ts",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
     "prepare": "husky install",
-    "pre-commit-lint": "yarn lint-staged"
+    "check-ts": "yarn tsc",
+    "pre-commit-lint": "yarn tsc && yarn lint-staged"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
