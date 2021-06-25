@@ -1,6 +1,6 @@
 {
     "src/**/*.+(js|json|ts)": [
-      "eslint '*/**/*.{js,ts}' --quiet --fix"
+      "eslint 'src/**/*.{js,ts}' --quiet --fix"
     ],
     "src/**/*.{js,ts,json}": [
       "prettier --write ."
