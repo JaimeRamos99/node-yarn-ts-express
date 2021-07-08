@@ -1,9 +1,14 @@
-import express from 'express';
+import Server from './application/server';
 
-const app = express();
+const server = new Server(3000);
 
-app.get('/', (req, res) => {
-    res.send('Well donnnnne!');
-});
+const main = async () => {
+    await server.setup();
+    server.start();
+};
 
-app.listen(3000);
+process.on('uncaughtException', () => server.stop());
+process.on('SIGINT', () => server.stop());
+process.on('SIGTERM', () => server.stop());
+
+main();
