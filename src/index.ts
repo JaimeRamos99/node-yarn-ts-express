@@ -1,9 +1,17 @@
-import express from 'express';
+import WebServer from './server';
 
-const app = express();
+const server = new WebServer(3000);
 
-app.get('/', (req, res) => {
-    res.send('Well donnnnne!');
-});
+const main = async () => {
+    server.setup();
+    server.start();
+};
 
-app.listen(3000);
+process.on('uncaughtException', () => server.stop());
+process.on('SIGINT', () => server.stop());
+process.on('SIGTERM', () => server.stop());
+process.on('SIGHUP', () => server.stop());
+
+main();
+
+export default server.returnApp();
