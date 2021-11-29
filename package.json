@@ -7,15 +7,15 @@
     "license": "MIT",
     "scripts": {
         "build": "tsc",
-        "start:prod": "NODE_ENV=production node ./bin/index.js",
-        "start:dev": "NODE_ENV=development nodemon --watch './**/*.ts' --exec 'ts-node' ./src/index.ts",
+        "prod": "node ./bin/index.js",
+        "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/index.ts",
         "eslint:lint": "eslint 'src/**/*.{js,ts}' --quiet --fix",
         "prettier:fix": "prettier --write .",
         "prettier:check": "prettier --check .",
         "prepare": "husky install",
         "check-ts": "yarn tsc",
         "pre-commit-lint": "yarn check-ts && yarn lint-staged",
-        "test": "NODE_ENV=test jest"
+        "test": "jest"
     },
     "devDependencies": {
         "@commitlint/cli": "^12.1.4",
@@ -35,6 +35,7 @@
         "typescript": "^4.3.4"
     },
     "dependencies": {
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "swagger-ui-express": "^4.1.6"
     }
 }
