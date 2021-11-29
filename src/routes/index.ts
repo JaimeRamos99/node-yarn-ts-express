@@ -6,8 +6,4 @@ const router = Router();
 
 router.use('/api-docs', swagger.serve, swagger.setup(swaggerDocument));
 
-router.get('/', (req, res) => {
-    res.send('Well donnnnne!');
-});
-
 export default router;
